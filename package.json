@@ -1,23 +1,25 @@
 {
   "name": "ch-e2c",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "中英文互译的命令行工具",
   "bin": {
-    "e2z": "index.js"
+    "e2c": "index.js"
   },
   "keywords": [
     "翻译",
     "中英文互译",
     "命令行工具"
   ],
-  "author": "chenzedong <625402731@qq.com>",
+  "author": "chenzedong <chzedong@foxmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "chalk": "^2.4.2",
+    "axios": "^1.10.0",
+    "ch-e2c": "^1.0.2",
+    "ch-tools-fetch": "1.0.6",
+    "chalk": "^5.4.1",
     "cheerio": "^1.0.0-rc.3",
-    "commander": "^3.0.1",
-    "ora": "^4.0.1"
+    "commander": "^14.0.0",
+    "ora": "^8.2.0"
   },
   "repository": {
     "type": "git",
