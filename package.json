@@ -2,6 +2,7 @@
   "name": "ch-e2c",
   "version": "1.0.3",
   "description": "中英文互译的命令行工具",
+  "type": "module",
   "bin": {
     "e2c": "index.js"
   },
@@ -13,9 +14,7 @@
   "author": "chenzedong <chzedong@foxmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.10.0",
     "ch-e2c": "^1.0.2",
-    "ch-tools-fetch": "1.0.6",
     "chalk": "^5.4.1",
     "cheerio": "^1.0.0-rc.3",
     "commander": "^14.0.0",
