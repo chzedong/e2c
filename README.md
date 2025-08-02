@@ -70,7 +70,6 @@ calculator
 
 - [Node.js](https://nodejs.org/) - 运行环境
 - [Commander.js](https://github.com/tj/commander.js/) - 命令行参数解析
-- [Axios](https://github.com/axios/axios) - HTTP 请求库
 - [Cheerio](https://github.com/cheeriojs/cheerio) - 服务端 jQuery 实现
 - [Chalk](https://github.com/chalk/chalk) - 终端字符串样式
 - [Ora](https://github.com/sindresorhus/ora) - 优雅的终端加载动画

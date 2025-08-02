@@ -1,6 +1,6 @@
 {
   "name": "ch-e2c",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "中英文互译的命令行工具",
   "type": "module",
   "bin": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenzedong5/e2z.git"
+    "url": "https://github.com/chzedong/e2c.git"
   },
-  "homepage": "https://github.com/chenzedong5/e2z#readme"
+  "homepage": "https://github.com/chzedong/e2c#readme"
 }
