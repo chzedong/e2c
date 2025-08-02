@@ -1,4 +1,6 @@
-import cheerio from 'cheerio';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const cheerio = require('cheerio');
 
 /**
  * Dict.cn 翻译服务配置
