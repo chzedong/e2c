@@ -1,6 +1,6 @@
 {
   "name": "ch-e2c",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "中英文互译的命令行工具",
   "type": "module",
   "bin": {
