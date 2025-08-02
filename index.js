@@ -1,46 +1,44 @@
 #! /usr/bin/env node
 
-const program = require('commander');
+const { program } = require('commander');
 const pkg = require('./package.json');
 const cheerio = require('cheerio');
 const chalk = require('chalk');
 const axios = require('axios');
-const ora = require('ora');
 
 program
+  .name('e2c')
+  .description('中英文互译')
   .version(pkg.version || '0.1.0')
   .option('-e --english <english>', '需要翻译的英文')
   .option('-c --chinese <chinese>', '需要翻译的中文')
-  .option('[param]', '需要翻译的中文或者英文')
-  .description('中英文互译')
-  .action(function (env) {
-    if (typeof env === 'string') {
-      if (/[\u4e00-\u9fa5]/.test(env)) {
-        return handleChinese(env);
+  .argument('[param]', '需要翻译的中文或者英文')
+  .action(async function (param, options) {
+    if (typeof param === 'string') {
+      if (/[\u4e00-\u9fa5]/.test(param)) {
+        return await handleChinese(param);
       } else {
-        return handleEnglish(env);
+        return await handleEnglish(param);
       }
     }
-    if (!env.english && !env.chinese) {
+    if (!options.english && !options.chinese) {
       console.error(
         '请输入需要翻译的内容，参数：-e --english <english>；-c --chinese <chinese>；[param]'
       );
       return;
     }
-    if (env.english) {
-      return handleEnglish(env.english);
+    if (options.english) {
+      return await handleEnglish(options.english);
     }
-    if (env.chinese) {
-      return handleChinese(env.chinese);
+    if (options.chinese) {
+      return await handleChinese(options.chinese);
     }
-
-    let english = env.english;
-    let res;
   });
 
 program.parse(process.argv);
 
-function handleEnglish(english) {
+async function handleEnglish(english) {
+  const ora = (await import('ora')).default;
   const spinner = ora('Loading...').start();
 
   axios(`http://dict.cn/${encodeURI(english)}`)
@@ -65,7 +63,8 @@ function handleEnglish(english) {
     });
 }
 
-function handleChinese(chinese) {
+async function handleChinese(chinese) {
+  const ora = (await import('ora')).default;
   const spinner = ora('Loading...').start();
 
   axios(`http://dict.cn/${encodeURI(chinese)}`)
